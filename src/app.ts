@@ -1,8 +1,9 @@
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import games from './routes/games';
+import { ExpressLogger } from './utils/log';
 
-const express = require('express');
-const cors = require('cors');
-const { ExpressLogger } = require('./utils/log');
+require('dotenv').config();
 
 const app = express();
 const { PORT } = process.env;
