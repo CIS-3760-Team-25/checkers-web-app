@@ -8,7 +8,7 @@
     "start": "ts-node src/app.ts",
     "dev": "nodemon",
     "start-server": "ts-node src/app.ts dotenv_config_path=./.env.test",
-    "test": "env TS_NODE_PROJECT=\"tsconfig.test.json\" mocha --require ts-node/register 'test/test.ts'",
+    "test": "env TS_NODE_PROJECT=\"tsconfig.test.json\" mocha --recursive --require ts-node/register 'test/**/*'",
     "ci": "start-server-and-test start-server http://localhost:3000 test",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. ."
@@ -38,6 +38,7 @@
     "@types/express": "^4.17.13",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.11.7",
+    "@types/pg": "^8.6.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "chai": "^4.3.4",

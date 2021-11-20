@@ -15,6 +15,7 @@ app.use(ExpressLogger());
 app.use(express.static('./build'));
 
 app.post('/games', games.post);
+app.put('/games', games.put);
 
 app.listen(PORT, () => {
   console.log(`checkers-app - http://localhost:${PORT}`);
