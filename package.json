@@ -5,7 +5,8 @@
   "description": "Unity Checkers",
   "main": "src/app.ts",
   "scripts": {
-    "start": "nodemon",
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. ."
   },
