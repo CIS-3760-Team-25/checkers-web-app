@@ -3,7 +3,7 @@ require('dotenv').config();
 import express from 'express';
 import cors from 'cors';
 import games from './routes/games';
-import { ExpressLogger } from './utils/log';
+import { ExpressLogger } from '../utils/log';
 
 const app = express();
 const { PORT } = process.env;

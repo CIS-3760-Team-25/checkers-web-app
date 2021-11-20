@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "sourceMap": true,
-    "rootDir": "./test",
+    "rootDir": "./",
     "declaration": false,
     /* Module Resolution Options */
     "moduleResolution": "node",
@@ -16,6 +16,6 @@
     "inlineSourceMap": true
   },
   "lib": ["es2015"],
-  "include": ["test/**/*"],
+  "include": ["test/**/*", "utils/**/*"],
   "exclude": ["node_modules"]
 }

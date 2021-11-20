@@ -21,6 +21,8 @@
     "implicit-arrow-linebreak": "off",
     "import/no-import-module-exports": "off",
     "import/extensions": "off",
-    "import/first": "warn"
+    "import/first": "warn",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"]
   }
 }
