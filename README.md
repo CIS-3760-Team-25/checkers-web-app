@@ -10,6 +10,12 @@ Use the following command to start `nodemon` and the Express.js server
 npm run dev
 ```
 
+Use the following command to run test suite
+
+```bash
+npm run ci
+```
+
 #### Docker
 
 Use the following commands to build and run the Docker image locally
@@ -29,3 +35,9 @@ Use the following commands to push and deploy a local Docker image to Heroku
 heroku container:push web -a unity-checkers
 heroku container:release web -a unity-checkers
 ```
+
+<br>
+
+### Notes
+
+- Only entrypoints should require dotenv (ex. app.ts, test.ts)

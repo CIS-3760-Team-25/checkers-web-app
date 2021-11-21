@@ -3,7 +3,7 @@ require('dotenv').config();
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import utils from './test-utils';
-import ErrorCodes from '../utils/error-codes';
+import { ErrorCode } from '../utils/enums';
 import { Logger } from '../utils/log';
 
 chai.use(chaiHttp);
@@ -39,11 +39,11 @@ describe('End Game', () => {
               playerOneCaptures: 4,
               playerTwoCaptures: 6,
             })
-            .then((res1) => {
-              res1.should.have.status(200);
-              res1.body.should.be.a('object');
-              res1.body.should.have.property('data', null);
-              res1.body.should.have.property('error', null);
+            .then((outcomeRes) => {
+              outcomeRes.should.have.status(200);
+              outcomeRes.body.should.be.a('object');
+              outcomeRes.body.should.have.property('data', null);
+              outcomeRes.body.should.have.property('error', null);
               done();
             })
             .catch((err) => {
@@ -82,11 +82,11 @@ describe('End Game', () => {
               playerOneCaptures: 1,
               playerTwoCaptures: 7,
             })
-            .then((res1) => {
-              res1.should.have.status(200);
-              res1.body.should.be.a('object');
-              res1.body.should.have.property('data', null);
-              res1.body.should.have.property('error', null);
+            .then((outcomeRes) => {
+              outcomeRes.should.have.status(200);
+              outcomeRes.body.should.be.a('object');
+              outcomeRes.body.should.have.property('data', null);
+              outcomeRes.body.should.have.property('error', null);
               done();
             })
             .catch((err) => {
@@ -115,7 +115,7 @@ describe('End Game', () => {
           res.should.have.status(404);
           res.body.should.be.a('object');
           res.body.should.have.property('data', null);
-          res.body.should.have.property('error', ErrorCodes.E004);
+          res.body.should.have.property('error', ErrorCode.E004);
           done();
         })
         .catch((err) => {
@@ -136,7 +136,7 @@ describe('End Game', () => {
           res.should.have.status(400);
           res.body.should.be.a('object');
           res.body.should.have.property('data', null);
-          res.body.should.have.property('error', ErrorCodes.E002);
+          res.body.should.have.property('error', ErrorCode.E002);
           done();
         })
         .catch((err) => {
@@ -157,7 +157,7 @@ describe('End Game', () => {
           res.should.have.status(400);
           res.body.should.be.a('object');
           res.body.should.have.property('data', null);
-          res.body.should.have.property('error', ErrorCodes.E002);
+          res.body.should.have.property('error', ErrorCode.E002);
           done();
         })
         .catch((err) => {
@@ -177,7 +177,7 @@ describe('End Game', () => {
           res.should.have.status(400);
           res.body.should.be.a('object');
           res.body.should.have.property('data', null);
-          res.body.should.have.property('error', ErrorCodes.E002);
+          res.body.should.have.property('error', ErrorCode.E002);
           done();
         })
         .catch((err) => {
@@ -197,7 +197,7 @@ describe('End Game', () => {
           res.should.have.status(400);
           res.body.should.be.a('object');
           res.body.should.have.property('data', null);
-          res.body.should.have.property('error', ErrorCodes.E002);
+          res.body.should.have.property('error', ErrorCode.E002);
           done();
         })
         .catch((err) => {

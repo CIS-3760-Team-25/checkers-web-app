@@ -6,7 +6,7 @@
 import { Request, Response } from 'express';
 import { QueryResult } from 'pg';
 import { Logger } from '../../utils/log';
-import ErrorCodes from '../../utils/error-codes';
+import { ErrorCode } from '../../utils/enums';
 import db from '../../utils/db';
 
 const logger = Logger('Checkers API');
@@ -19,7 +19,7 @@ export default {
     const playerTwo = req.body?.playerTwo;
 
     if (!gameId || !playerOne?.name || !playerTwo?.name) {
-      res.status(400).json({ data: null, error: ErrorCodes.E001 });
+      res.status(400).json({ data: null, error: ErrorCode.E001 });
       return;
     }
 
@@ -33,7 +33,7 @@ export default {
       })
       .catch((error: Error) => {
         logger.error(`Failed to create game record (${gameId}): ${error}`);
-        res.status(500).json({ data: null, error: ErrorCodes.E001 });
+        res.status(500).json({ data: null, error: ErrorCode.E001 });
       });
   },
   // Record game results
@@ -47,7 +47,7 @@ export default {
     };
 
     if (!gameId || !outcome || !captures?.playerOne || !captures?.playerTwo) {
-      res.status(400).json({ data: null, error: ErrorCodes.E002 });
+      res.status(400).json({ data: null, error: ErrorCode.E002 });
       return;
     }
 
@@ -69,16 +69,16 @@ export default {
             })
             .catch((error: Error) => {
               logger.error(`Failed to store game captures (${gameId}): ${error}`);
-              res.status(500).json({ data: null, error: ErrorCodes.E003 });
+              res.status(500).json({ data: null, error: ErrorCode.E003 });
             });
         } else {
           logger.error(`Could not find game record (${gameId})`);
-          res.status(404).json({ data: null, error: ErrorCodes.E004 });
+          res.status(404).json({ data: null, error: ErrorCode.E004 });
         }
       })
       .catch((error: Error) => {
         logger.error(`Failed to update game record (${gameId}): ${error}`);
-        res.status(500).json({ data: null, error: ErrorCodes.E002 });
+        res.status(500).json({ data: null, error: ErrorCode.E002 });
       });
   },
 };

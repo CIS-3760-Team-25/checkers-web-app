@@ -3,7 +3,7 @@ require('dotenv').config();
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import utils from './test-utils';
-import ErrorCodes from '../utils/error-codes';
+import { ErrorCode } from '../utils/enums';
 import { Logger } from '../utils/log';
 
 chai.use(chaiHttp);
@@ -51,7 +51,7 @@ describe('Start Game', () => {
           res.should.have.status(400);
           res.body.should.be.a('object');
           res.body.should.have.property('data', null);
-          res.body.should.have.property('error', ErrorCodes.E001);
+          res.body.should.have.property('error', ErrorCode.E001);
           done();
         })
         .catch((err) => {
@@ -71,7 +71,7 @@ describe('Start Game', () => {
           res.should.have.status(400);
           res.body.should.be.a('object');
           res.body.should.have.property('data', null);
-          res.body.should.have.property('error', ErrorCodes.E001);
+          res.body.should.have.property('error', ErrorCode.E001);
           done();
         })
         .catch((err) => {
@@ -94,7 +94,7 @@ describe('Start Game', () => {
           res.should.have.status(400);
           res.body.should.be.a('object');
           res.body.should.have.property('data', null);
-          res.body.should.have.property('error', ErrorCodes.E001);
+          res.body.should.have.property('error', ErrorCode.E001);
           done();
         })
         .catch((err) => {

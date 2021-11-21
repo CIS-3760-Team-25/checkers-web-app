@@ -114,7 +114,7 @@ null
 {
   "data": null | {
     "stats": {
-      "games_played": <int>,
+      "gamesPlayed": <int>,
       "wins": <int>,
       "losses": <int>,
       "draws": <int>,
