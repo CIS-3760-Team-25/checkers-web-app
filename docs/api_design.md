@@ -28,12 +28,12 @@ Start a new game between 2 players
 
 ```
 {
-  "game_id": <uuid>,
-  "player_one": {
+  "gameId": <uuid>,
+  "playerOne": {
     "name": "Guest" | <string>,
     "email": null | <string>
   },
-  "player_two": {
+  "playerTwo": {
     "name": "Guest" | <string>,
     "email": null | <string>
   }
@@ -66,18 +66,16 @@ End a previously started game
 
 ```
 {
-  "game_id": <uuid>,
-  "winner": null | "player_one" | "player_two",
-  "captures": {
-    "player_one": <int>,
-    "player_two": <int>
-  }
+  "gameId": <uuid>,
+  "outcome": "draw" | "player_one_win" | "player_two_win",
+  "playerOneCaptures": <int>,
+  "playerTwoCaptures": <int>
 }
 ```
 
 #### Response Status Codes
 
-- `201` : Game created successfully
+- `200` : Game updated successfully
 - `400` : Malformed request (missing required field)
 - `404` : Game not found (game doesn't exist, should be impossible to do this tho)
 - `500` : Internal server error (database failure)
@@ -116,12 +114,12 @@ null
 {
   "data": null | {
     "stats": {
-      "games_played": <int>,
+      "gamesPlayed": <int>,
       "wins": <int>,
       "losses": <int>,
       "draws": <int>,
       "incompletes": <int>,
-      "avg_game_length": <string>
+      "avgGameLength": <string>
     }
   },
   "error": null | <string>
