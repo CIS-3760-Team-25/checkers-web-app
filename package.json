@@ -10,7 +10,6 @@
     "start-server": "ts-node src/app.ts dotenv_config_path=./.env.test",
     "test": "env TS_NODE_PROJECT=\"tsconfig.test.json\" mocha --recursive --require ts-node/register 'test/**/*'",
     "ci": "start-server-and-test start-server http://localhost:3000 test",
-    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. ."
   },
   "repository": {

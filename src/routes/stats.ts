@@ -63,17 +63,15 @@ export default {
 
           res.status(200).json({
             data: {
-              stats: {
-                gamesPlayed,
-                wins,
-                draws,
-                incompletes,
-                losses,
-                totalCaptures,
-                totalTime,
-                avgGameLength,
-                avgCaptures,
-              },
+              gamesPlayed,
+              wins,
+              draws,
+              incompletes,
+              losses,
+              totalCaptures,
+              totalTime,
+              avgGameLength,
+              avgCaptures,
             },
             error: null,
           });
