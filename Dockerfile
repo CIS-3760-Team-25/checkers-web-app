@@ -9,6 +9,7 @@ RUN npm ci
 RUN npm i ts-node
 
 COPY src/ /app/src
+COPY utils/ /app/utils
 COPY build/ /app/build
 
 COPY .env.prod /app/.env
