@@ -46,7 +46,7 @@ export default {
       playerTwo: req.body?.playerTwoCaptures,
     };
 
-    if (!gameId || !outcome || !captures?.playerOne || !captures?.playerTwo) {
+    if (!gameId || !outcome || captures?.playerOne == null || captures?.playerTwo == null) {
       res.status(400).json({ data: null, error: ErrorCode.E002 });
       return;
     }
