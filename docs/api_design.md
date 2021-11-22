@@ -15,7 +15,7 @@ All API responses will be of the following format...
 
 Where...
 
-- `data` is a JSON object with a single attribute containing response data for `GET` request. Always `null` for non-`GET` requests
+- `data` is a JSON object containing response data for `GET` request. Always `null` for non-`GET` requests
 - `error` is a user-readable string for any `5xx` or `4xx` series status codes and `null` otherwise.
 
 <br>
