@@ -15,6 +15,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Create .env.prod file
+        run: |
+          touch .env.prod
+          echo DATABASE_URL=${{secrets.DATABASE_URL}} >> .env.prod
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
