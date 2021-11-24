@@ -42,3 +42,6 @@ jobs:
           heroku_app_name: 'unity-checkers'
           heroku_email: 'aferron@uoguelph.ca'
           usedocker: true
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: .env.prod
