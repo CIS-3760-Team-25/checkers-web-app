@@ -19,6 +19,7 @@ jobs:
         run: |
           touch .env.prod
           echo DATABASE_URL=${{secrets.DATABASE_URL}} >> .env.prod
+          cat .env.prod
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
